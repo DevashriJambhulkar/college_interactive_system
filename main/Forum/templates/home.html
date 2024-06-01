@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Interactive System</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+  <div class="yeo-slogan">
+    <div class="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container yeo-header">
+      <div class="columns">
+        <div class="column col-12">
+          <header class="navbar">
+            <img class="logo" src="/static/images/logoimp.png" height="80 px" alt="">
+            <section class="navbar-section left hide-sm">
+              <a class="btn btn-primary btn-hire-me" href="#">HOME</a>
+              <a class="btn btn-primary btn-link" href="#we-do">ABOUT</a>
+              <a class="btn btn-primary btn-link" href="#we-work">SUPPORT</a>
+            </section>
+          </header>
+        </div>
+      </div>
+    </div>
+    <div class="container slogan">
+      <div class="columns">
+        <div class="column col-7 col-sm-12">
+          <div class="slogan-content">
+            <h1><i>
+                <span class="slogan-bold">Join the</span>
+                <span class="slogan-bold">conversation,</span>
+                <span class="slogan-bold">and be heard!</span></i>
+            </h1>
+            <p>Explore Endless Conversations and Expert Insights in Our Dynamic Forum Hub.
+              <br>Join Our Vibrant Community Forum Today!
+            </p>
+            <a class="btn btn-primary btn-lg btn-start" href="/login_register">Explore</a>
+          </div>
+        </div>
+        <div class="column col-5 hide-sm">
+          <img class="slogan-img" src="/static/images/yeo-feature-1.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="yeo-do" id="we-do">
+    <div class="column col-12">
+      <h2 class="feature-title">ABOUT</h2>
+    </div>
+    <p>
+      Welcome to college-interactive system, a forum designed to connect students and foster meaningful
+      discussions. Located in Nagpur, MH, our platform serves as a hub for students seeking academic support,
+      career guidance, and a sense of community.With a diverse range of topics and a user-friendly interface, we
+      strive to provide a valuable resource for students to connect, learn, and grow.</p>
+    <p>
+      Our mission is to create an inclusive and engaging space where students can share knowledge, exchange ideas,
+      and build connections. Whether you are a high school student preparing for college or a university student
+      navigating your academic. journey, our forum offers a supportive environment where you can seek advice,
+      collaborate with peers, and expand your network. Join us today and be a part of the
+      college-interactive-system community!
+    </p>
+  </div>
+  <div class="yeo-work" id="we-work">
+    <div class="container yeo-body">
+      <div class="columns">
+        <div class="column col-12 col-sm-12">
+          <h2 class="feature-title">SUPPORT</h2>
+        </div>
+        <div class="accordion">
+          <input type="checkbox" id="tab1" />
+          <label class="accordion-label" for="tab1">How do I create an account?</label>
+          <div class="accordion-content">
+            In order to post or comment in this forum, you first need to have an account. You can register at
+            http://127.0.0.1:5000/login_register.
+          </div>
+        </div>
+        <div class="accordion">
+          <input type="checkbox" id="tab2" />
+          <label class="accordion-label" for="tab2">How can I post on the forum?</label>
+          <div class="accordion-content">
+            Once you've logged in, navigate to the appropriate category or topic, and click on the "Upload Post" button
+            to create a new post or comment to an existing one.
+          </div>
+        </div>
+        <div class="accordion">
+          <input type="checkbox" id="tab3" />
+          <label class="accordion-label" for="tab3">How can I ask a query on the forum?</label>
+          <div class="accordion-content">
+            Once you've logged in, navigate to the appropriate category or topic, and click on the "Ask question" button
+            to ask a new query or reply to an existing one.
+          </div>
+        </div>
+        <div class="accordion">
+          <input type="checkbox" id="tab4" />
+          <label class="accordion-label" for="tab4">Can I create private groups?</label>
+          <div class="accordion-content">
+            Yes, you can create private groups or start private conversations with other members. Look for the
+            "Chitchat" option to get started.
+          </div>
+        </div>
+        <div class="accordion">
+          <input type="checkbox" id="tab5" />
+          <label class="accordion-label" for="tab5">Is there a limit to the number of posts I can make?</label>
+          <div class="accordion-content">
+            There's no set limit to the number of posts you can make, but please avoid spamming or overposting in order
+            to maintain the quality of discussions on the forum.
+          </div>
+        </div>
+        <div class="accordion">
+          <input type="checkbox" id="tab6" />
+          <label class="accordion-label" for="tab6">Can a user chat with other users ?</label>
+          <div class="accordion-content">
+            Yes, a user can chat with other users.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="back">
+    <footer class="footer">
+      <img src="/static/images/logoimp1.png" alt="" class="log1" height="110px">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <div class="col-lg-3 item social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-meta"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <p class="copyright">College Interactive System &#169; 2024</p>
+      </div>
+  </div>
+  </div>
+  </footer>
+  </div>
+  </footer>
+  </div>
+  </div>
+  <script src="https://kit.fontawesome.com/fb211eb048.js" crossorigin="anonymous">
+    function myfun() {
+      document.getElementsByClassName("active").style.transform = "translateX(-100%)";
+    }
+  </script>
+</body>
+
+</html>

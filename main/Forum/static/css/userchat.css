@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    /* background: url(/static/images/goodimg.jpg); */
+    background-image: -webkit-linear-gradient(44deg, #0C0091 0%, #00A87E 100%);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+}
+
+.side-nav {
+    width: 110px;
+    height: 100%;
+    position: relative;
+    float: left;
+    top: 0;
+    left: 0;
+    padding: 30px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.5s ;
+    z-index: 99999;
+}
+ul{
+    list-style: none;
+    padding: 0 15px;
+}
+ul li{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+ul li a{
+    white-space: nowrap;
+    position: relative;
+    left: 15px;
+    font-size: large;
+    display: none;
+}
+.side-nav:hover{
+    width: 250px;
+}
+
+.side-nav:hover ul li a{
+    display: block;
+}
+.side-nav:hover ul li{
+    justify-content: flex-start;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.user h2{
+    font-size: 23px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.user-img{
+    width: 40px;
+    margin: auto;
+}
+
+.user div{
+    display: none;
+}
+
+.side-nav:hover .user div{
+    display: block;
+}
+
+.side-nav:hover .user{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+.side-nav ul li .active{
+    background: #1411b6;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 1px;
+}
+.side-nav:hover ul li .active {
+    background: none;
+    backdrop-filter: none;
+}
+
+.side-nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* posts */
+  .container{
+    /* border: solid 4px red; */
+    flex: 20;
+}

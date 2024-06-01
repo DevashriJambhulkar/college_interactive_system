@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login_register.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="/login_register1" method="post">
+                <h1>Create Account</h1>
+                <div class="adjust">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="adjust">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="adjust">
+                    <input type="text" name="college" placeholder="College" required>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="adjust">
+                    <select name="choose" id="input" required>
+                        <option value="">--Select--</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </div>
+                <div class="adjust">
+                    <input id="password1" type="password" name="password" placeholder="Password" required>
+                    <i id="icon1" class="far fa-eye"></i>
+                </div>
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="/login_register" method="post">
+                <h1>Sign In</h1>
+                <div class="adjust">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="adjust">
+                    <input id="password2" type="password" name="password" placeholder="Password" required>
+                    <i id="icon2" class="far fa-eye"></i>
+                </div>
+                <a href="/changepass">Forget Your Password?</a>
+                <button>Sign In</button>
+
+                <h5 class="in">{{text}}</h5>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back !</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome, Friend!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+        // hide show password1
+        var myInput = document.getElementById('password1'),
+            myIcon = document.getElementById('icon1');
+        myInput.onfocus = function () {
+            myIcon.style.right = '3px'
+        }
+        myInput.onblur = function () {
+            myIcon.style.right = '14px'
+        }
+        myIcon.onclick = function () {
+            if (myIcon.classList.contains('fa-eye')) {
+                this.classList.toggle('fa-eye-slash');
+                this.classList.toggle('fa-eye');
+                myInput.setAttribute('type', 'text');
+            } else {
+                myInput.setAttribute('type', 'password');
+
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            };
+        }
+        // hide show password2
+        var myinput2 = document.getElementById('password2'),
+            myicon2 = document.getElementById('icon2');
+        myinput2.onfocus = function () {
+            myicon2.style.right = '3px'
+        }
+        myinput2.onblur = function () {
+            myicon2.style.right = '14px'
+        }
+        myicon2.onclick = function () {
+            if (myicon2.classList.contains('fa-eye')) {
+                this.classList.toggle('fa-eye-slash');
+                this.classList.toggle('fa-eye');
+                myinput2.setAttribute('type', 'text');
+            } else {
+                myinput2.setAttribute('type', 'password');
+
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            };
+        }
+    </script>
+</body>
+
+</html>

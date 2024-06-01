@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CHITCHAT</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/forum.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboard.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="side-nav">
+            <div class="user">
+                <img src="/static/images/userimage.png" alt="" class="user-img">
+                <div>
+                    <h2 class="user-name">Hello! {{username}}</h2>
+                </div>
+            </div>
+            <ul>
+                <li><i class='bx bxs-home bx-md'></i>
+                    <a href="/dash">Home</a>
+                </li>
+                <li><img class="active"
+                        src=" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAADF0lEQVR4nOWYW4hOURTHf3JJY9wmuWXGZSgmD0qMSSmXROFB5IFoyCUPruUy0pTU5AHj9kCE3DVIeZvRDNGMvIwmkkvGkFuS2zBuc7RqfXU6rfOdme/sb4h/rZfvv1vn952999rrbPiHNRCYBMwFJgLZ/AXqBmwEHgGeEfeBdUDmn4CbADSEgHmBeAzktyWcTOWXFsJ5Gp+AAqA9cBW4BRQDfVzDZQEvWwnnadQDXfXtJ35rBFa4BNySIpynsVrzPAj8XuQK8HZMwErNczjw+09gjAvANzEB6zXPNsM75QLwYUzAOs2zw/CeuAA8HxPwqOa5YnivXABOjgHXDIzXAt+YZH3G1okUAQ9FVIJCV4BdQqbISxKXgE56onw1/Cot4s7UuYWnyVtgFdAOGAq8MMZcB3riWMsDD7kLVGvjUK3LYKG+bdEc4H3In5Ad7by1eqfJX2tHEzU9/YEZwCJgFrAVaNIcMhPDXQL2A0YDuUCHGHmygZVACbCA/01ZwHydqtkBbyxQClRobZPp9WuErmFpt3LSATcP+Ohb5N+AqeqVGJtANsceXacC9ytwvG1wCZfrW9z+ZrQ7MC2i5CRaqhuGJ2vRidaE1DHRkQjAezqu1PBqXAHuMpKfVK8yAlDKiWit4T11BWglv6zehRb2gsWGdy2dU1yT5O16BsT+dALuNpKfUa8qAlA2k2h9krcbW/mBEiNRpt7FCMDEOisyvM041CajY5HbA6lxz0LgmrQMiW6mawcnlGm0TYkPHmuNetrdoFchQW8KadAd40HTgY66noKeHHcDQprVYS7B8oCzgQfI98UBYIiOqTUgpOvJABbrlPo96SGX+HrHlDRI611zIPlpoLeOGQwcD5liOd5m+vrGAr2f8Y/5AOwEerQWbpyxcwV0qfoyRef0dsCLiAbtgDL1M2C7MUbufka2BrDOSCLdCdpoWp+QXkQ811sy0THDr9U/EKmckJLRCxgF/EgBztP4rG+/L/A91c2TobcJ5b7Yp97BGHCexl7f8ed/Rpl+4MdShQPActIoKTnLYkZeOgHbXL8BGPNm/2IaEzMAAAAASUVORK5CYII=">
+                    <a href="/chitchat">Chitchat</a>
+                </li>
+                <li><i class='bx bx-question-mark bx-md'></i>
+                    <a href="/chat">Ask question</a>
+                </li>
+                <li><i class='bx bxs-cloud-upload bx-md'></i>
+                    <a href="/upload">Upload post</a>
+                </li>
+                <li><i class='bx bxs-chat bx-md'></i>
+                    <a href="/userchat">Chat</a>
+                </li>
+
+            </ul>
+
+            <ul>
+                <li><i class='bx bx-log-out bx-md'></i>
+                    <a href="/login_register">logout</a>
+                </li>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="container">
+            <div class="content" style="margin-top: 50px; ">{% block content %} {% endblock %}</div>
+
+        </div>
+    </div>
+</body>
+
+</html>

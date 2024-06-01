@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHAT</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/userchat.css')}}">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="header">
+    <div class="side-nav">
+      <div class="user">
+        <img src="/static/images/userimage.png" alt="" class="user-img">
+        <div>
+          <h2 class="user-name">Hello! {{username}}</h2>
+        </div>
+      </div>
+      <ul>
+        <li><i class='bx bxs-home bx-md'></i>
+          <a href="/dash">Home</a>
+        </li>
+        <li><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAADF0lEQVR4nOWYW4hOURTHf3JJY9wmuWXGZSgmD0qMSSmXROFB5IFoyCUPruUy0pTU5AHj9kCE3DVIeZvRDNGMvIwmkkvGkFuS2zBuc7RqfXU6rfOdme/sb4h/rZfvv1vn952999rrbPiHNRCYBMwFJgLZ/AXqBmwEHgGeEfeBdUDmn4CbADSEgHmBeAzktyWcTOWXFsJ5Gp+AAqA9cBW4BRQDfVzDZQEvWwnnadQDXfXtJ35rBFa4BNySIpynsVrzPAj8XuQK8HZMwErNczjw+09gjAvANzEB6zXPNsM75QLwYUzAOs2zw/CeuAA8HxPwqOa5YnivXABOjgHXDIzXAt+YZH3G1okUAQ9FVIJCV4BdQqbISxKXgE56onw1/Cot4s7UuYWnyVtgFdAOGAq8MMZcB3riWMsDD7kLVGvjUK3LYKG+bdEc4H3In5Ad7by1eqfJX2tHEzU9/YEZwCJgFrAVaNIcMhPDXQL2A0YDuUCHGHmygZVACbCA/01ZwHydqtkBbyxQClRobZPp9WuErmFpt3LSATcP+Ohb5N+AqeqVGJtANsceXacC9ytwvG1wCZfrW9z+ZrQ7MC2i5CRaqhuGJ2vRidaE1DHRkQjAezqu1PBqXAHuMpKfVK8yAlDKiWit4T11BWglv6zehRb2gsWGdy2dU1yT5O16BsT+dALuNpKfUa8qAlA2k2h9krcbW/mBEiNRpt7FCMDEOisyvM041CajY5HbA6lxz0LgmrQMiW6mawcnlGm0TYkPHmuNetrdoFchQW8KadAd40HTgY66noKeHHcDQprVYS7B8oCzgQfI98UBYIiOqTUgpOvJABbrlPo96SGX+HrHlDRI611zIPlpoLeOGQwcD5liOd5m+vrGAr2f8Y/5AOwEerQWbpyxcwV0qfoyRef0dsCLiAbtgDL1M2C7MUbufka2BrDOSCLdCdpoWp+QXkQ811sy0THDr9U/EKmckJLRCxgF/EgBztP4rG+/L/A91c2TobcJ5b7Yp97BGHCexl7f8ed/Rpl+4MdShQPActIoKTnLYkZeOgHbXL8BGPNm/2IaEzMAAAAASUVORK5CYII=">
+          <a href="/chitchat">Chitchat</a>
+        </li>
+        <li><i class='bx bx-question-mark bx-md'></i>
+          <a href="/chat">Ask question</a>
+        </li>
+        <li><i class='bx bxs-cloud-upload bx-md'></i>
+          <a href="/upload">Upload post</a>
+        </li>
+        <li><i class='bx bxs-chat bx-md'></i>
+          <a href="/userchat">Chat</a>
+        </li>
+
+      </ul>
+
+      <ul>
+        <li><i class='bx bx-log-out bx-md'></i>
+          <a href="/login_register">logout</a>
+        </li>
+        </li>
+      </ul>
+
+    </div>
+    <div class="container">
+      <section
+        style="margin: auto; height: 200px; width: 500px; background-color: white; margin-top: 18%; display: flex;border-radius: 5px;border: 2px solid black;">
+        <form style="text-align: center;" action="/userchat" method="post">
+          <h2>Enter Username :</h2>
+          <small>(Enter the name of the user you want to talk to)</small>
+          <input style="width: 300px;border: 2px solid black;" class="input-center" type="text" name="username"
+            placeholder=""><br><br>
+          <button  style="background-color: transparent;border-radius: 5px;height: 35px;width: 150px;border: 2px solid #0DCAF0; color: #0DCAF0;">Start
+            Chatting</button>
+          <br>
+          {{text}}
+        </form>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

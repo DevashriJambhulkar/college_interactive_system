@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERS</title>
+</head>
+<body style="width: 100%;
+height: 100vh;
+background-image: -webkit-linear-gradient(44deg, #0C0091 0%, #00A87E 100%);
+background-position: center;
+background-size: cover;" >
+    <h1  align="center"><span style="border-bottom: 3px solid white;">Users</span></h1>
+    <table style="background-color: white;" border="1" align="center">
+        <th>ID</th>
+        <th>usename</th>
+        <th>email</th>
+        <th>college</th>
+        <th>choose</th>
+        <th>password</th>
+        <th colspan="2">Action</th>
+        {% for user in data %}
+        
+        <tr>
+            <td>{{user[0]}}</td>
+            <td>{{user[1]}}</td>
+            <td>{{user[2]}}</td>
+            <td>{{user[3]}}</td>
+            <td>{{user[4]}}</td>
+            <td>{{user[5]}}</td>
+            <td><a href="/edit?id={{user[0]}}">Edit</a></td>
+            <td><a href="/delete?id={{user[0]}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h1  align="center"><span style="border-bottom: 3px solid white;">Users messages</span></h1>
+    <table style="background-color: white;" border="1" align="center">
+        <th>ID</th>
+        <th>sender</th>
+        <th>messages</th>
+   =
+        <th colspan="2">Action</th>
+        {% for messages in msg %}
+        
+        <tr>
+            <td>{{messages[0]}}</td>
+            <td>{{messages[1]}}</td>
+            <td>{{messages[2]}}</td>
+    
+            <td><a href="/delete?id={{messages[0]}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h1  align="center"><span style="border-bottom: 3px solid white;">Users Replies</span></h1>
+    <table style="background-color: white;" border="1" align="center">
+        <th>ID</th>
+        <th>Message_ID</th>
+        <th>Sender</th>
+        <th>Reply</th>
+   =
+        <th colspan="2">Action</th>
+        {% for replies in rep %}
+        
+        <tr>
+            <td>{{replies[0]}}</td>
+            <td>{{replies[1]}}</td>
+            <td>{{replies[2]}}</td>
+            <td>{{replies[3]}}</td>
+            <td><a href="/delete?id={{replies[0]}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,65 @@
+.container{
+    overflow: scroll;
+}
+
+
+.template{
+    width: 900px;
+    background-color: white;
+    margin: auto;
+    margin-top: 30px;
+    border: 2px solid black;
+}
+.username{
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid black ;
+    outline: black;
+}
+.file{
+    height: 400px;
+    width: 100%;
+    margin: auto;
+}
+.file img, video{
+    height: 400px;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+}
+.options{
+    display: flex;
+    margin: auto;
+
+}
+
+.options form button{
+    background: transparent;
+    border: none;
+    margin-left: 10px;
+}
+
+.caption p{
+    margin-left: 10px;
+}
+.comment p{
+    margin-left: 10px;
+}
+.comment ul p{
+    margin-left: 70px;
+
+}
+.comment_text{
+    width: 20%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #0DCAF0;
+    border: 1px solid #0DCAF0;
+    outline: none;
+    margin-bottom: 10px;
+}
+.comment_text:hover{
+    
+    background-color: #0DCAF0;
+    color: black;
+}

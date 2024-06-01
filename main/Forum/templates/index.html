@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="main">
+            <ul id="messages"></ul>
+            <div class="bar">
+                <input id="text" autocomplete="off" />
+                <button onclick="sendMessage()">Send</button>
+                <input type="file" id="file_input" /><button onclick="sendFile()">Send File</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        // var socket = io();
+
+        socket.on('text', function (data) {
+            $('#messages').append($('<li>').text(data));
+        });
+
+        function sendMessage() {
+            var message = $('#text').val();
+            socket.emit('text', message);
+            $('#text').val('');
+        }
+        socket.on('file', function (data) {
+            $('#messages').append($('<li>').text('File received: ' + data.filename));
+            $('#messages').append($('<li>').html('<img style="height: 300px" src="data:image/jpeg;base64,' + data.file_data + '" />'));
+        });
+
+
+        function sendFile() {
+            var file = $('#file_input')[0].files[0];
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var file_data = event.target.result.split(',')[1];
+                socket.emit('file', { filename: file.name, file_data: file_data });
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+
+</html>

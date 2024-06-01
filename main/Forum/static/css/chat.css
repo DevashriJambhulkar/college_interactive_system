@@ -1,0 +1,53 @@
+.container {
+    flex: 20;
+}
+
+.container .input-group {
+    margin: auto;
+    width: 1000px;
+    padding-top: 15px;
+}
+
+.button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button button {
+    width: 300px;
+}
+
+.form {
+    height: 220px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.container2 {
+    margin-top: 14px;
+    width: 100%;
+    height: 56%;
+    overflow: scroll;
+    border: 2px solid white;
+}
+
+
+li strong,#msg{
+    position: relative;
+    right: 280px;
+    margin-left: 10px;
+}
+li #rep, #left{
+    position: relative;
+    right: 400px;
+    margin-left: 10px;
+}
+
+li form{
+    position: relative;
+    left: 280px;
+}
