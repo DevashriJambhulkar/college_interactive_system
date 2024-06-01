@@ -38,4 +38,7 @@ Step 4: Run the project on local browser:
 1. In the terminal you’ll see the link. CTRL + click to follow the link.
 2. The local server will look like this http://127.0.0.1:5000
 3. By clicking ‘Explore’ you can explore my project.
+4. You can create your password to sign-in, sign-up. But to login as Admin:
+- username: Admin
+- Password: Admin123 
 By following these steps, you should be able to open the project in VS Code, set up the database in XAMPP, and run the project in a local browser.
