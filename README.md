@@ -42,3 +42,6 @@ Step 4: Run the project on local browser:
 - username: Admin
 - Password: Admin123 
 By following these steps, you should be able to open the project in VS Code, set up the database in XAMPP, and run the project in a local browser.
+
+Screen cast link
+https://1drv.ms/v/s!Aq_aQ5CvBU7uxFkVZzcdsI2BCXMD
